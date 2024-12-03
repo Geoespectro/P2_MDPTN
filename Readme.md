@@ -1,4 +1,3 @@
-
 # 🌐 MDPTN v0.1 - Proyecto de Descarga y Procesamiento de Datos Satelitales GOES-16 para Mapas de Permanencia de Topes Nubosos
 
 **MDPTN v0.1** es un sistema diseñado para automatizar la descarga y el procesamiento de datos satelitales **GOES-16**, facilitando la generación de mapas de permanencia de topes nubosos. Ideal para usuarios y desarrolladores enfocados en análisis climático, teledetección y meteorología.
@@ -43,7 +42,7 @@ El proyecto consta de dos módulos principales:
 │   │           └── natural_earth/physical
 │   ├── inbox                   # Directorio de entrada para las imágenes descargadas
 │   ├── main.py                 # Script principal para el procesamiento
-│   ├── src                     # Código auxiliar para el procesamiento
+│   ├── src                     # Carpeta auxiliar
 │   │   └── helpers.py          # Funciones auxiliares del módulo de procesamiento
 │   └── workdir                 # Resultados del procesamiento
 ├── test
@@ -62,7 +61,7 @@ El proyecto consta de dos módulos principales:
 - **Python 3.8+**
 
 ### Bibliotecas de Python necesarias:
-- `boto3`, `s3fs`, `numpy`, `netCDF4`, `matplotlib`, `cartopy`, `watchdog`, `imageio`
+- `boto3`, `s3fs`, `numpy`, `netCDF4`, `matplotlib`, `cartopy`, `watchdog`, `imageio`, `concurrent.futures`
 
 Instala las dependencias ejecutando:
 ```bash
