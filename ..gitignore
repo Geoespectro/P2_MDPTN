@@ -1,0 +1,35 @@
+# Excluir directorios de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos y directorios de logs
+*.log
+*.out
+*.err
+
+# Directorios de trabajo, resultados y temporales
+descarga/setup.json
+Procesador/inbox/
+Procesador/workdir/
+
+# Archivos de configuración específicos de tu entorno
+*.conf
+
+# Archivos de datos pesados o generados automáticamente
+*.dbf
+*.shp
+*.shx
+*.prj
+*.qpj
+wfsrequest.txt
+_directory
+
+# Archivos de dependencias
+*.lock
+
+# Exclusiones generales del entorno
+.env
+*.env
+*.DS_Store
+Thumbs.db
