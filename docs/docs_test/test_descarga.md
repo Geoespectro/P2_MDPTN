@@ -17,7 +17,7 @@ El objetivo principal del test es garantizar:
 ### **Configuración**
 
 #### **Entorno Requerido**
-- **Lenguaje:** Python 3.7+
+- **Lenguaje:Python 3.8+**
 - **Librerías Necesarias:**
   - `unittest`: Para estructurar las pruebas.
   - `s3fs`: Para conectarse al bucket S3 de forma anónima.

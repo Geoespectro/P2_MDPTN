@@ -72,7 +72,7 @@ La lógica del módulo de descarga se estructura de la siguiente forma:
      - Actualiza la base de datos `download_db` con cada archivo descargado.
 5. **Finalización**: El proceso se detiene al alcanzar la fecha y hora de fin o sigue indefinidamente si está en modo de descarga continua.
 
-## 4. Áreas en las que un Desarrollador Puede Mejorar el Código
+## 4. Áreas en las que se podria mejorar el codigo
 - **Manejo de Conexiones y Tiempos de Espera**: Se puede optimizar el tiempo de espera entre intentos fallidos para hacer más eficiente la conexión.
 - **Verificación de la Integridad de los Archivos**: Implementar una verificación de checksum para asegurar que los archivos descargados no estén corruptos.
 - **Escalabilidad del Paralelismo**: Ajustar dinámicamente `max_workers` según los recursos del sistema podría mejorar la eficiencia.

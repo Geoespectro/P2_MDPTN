@@ -1,5 +1,4 @@
 import logging
-import numpy as np
 import time
 import json
 import s3fs
@@ -73,6 +72,12 @@ else:
 
 # Obtener la última fecha y hora de la imagen descargada
 def get_last_downloaded_time():
+    """
+    Obtiene la última fecha y hora de la imagen descargada de la base de datos.
+
+    Returns:
+        datetime.datetime o None: La última fecha y hora descargada, o None si no hay registros.
+    """
     last_time = None
     for year in sorted(download_db.keys()):
         for day in sorted(download_db[year].keys()):
@@ -81,6 +86,7 @@ def get_last_downloaded_time():
                     last_time = datetime.datetime.strptime(f"{year}{day}{hour}", "%Y%j%H")
     return last_time
 
+# Definir la fecha y hora inicial para la descarga
 last_time = get_last_downloaded_time()
 if last_time:
     logger.info(f'Continuando desde la última fecha y hora descargada: {last_time}')
@@ -98,6 +104,20 @@ else:
 
 # Definir la función de descarga de archivos
 def download_file(f, temp_path, final_path, year, day, hour):
+    """
+    Descarga un archivo desde el repositorio remoto a una ubicación temporal y luego lo mueve a la ubicación final.
+
+    Args:
+        f (str): La ruta del archivo remoto a descargar.
+        temp_path (str): La ruta temporal donde se almacenará el archivo durante la descarga.
+        final_path (str): La ruta final donde se almacenará el archivo después de la descarga.
+        year (str): Año de la descarga.
+        day (str): Día del año de la descarga.
+        hour (str): Hora de la descarga.
+
+    Returns:
+        None
+    """
     image_name = f.split('/')[-1]
     if not image_name or len(image_name.strip()) == 0:
         logger.error('Nombre de archivo inválido para descargar. Omitiendo...')
@@ -208,4 +228,6 @@ while True:
     current_datetime += datetime.timedelta(hours=1)
 
 print("\n" + "="*40 + "\nDESCARGA COMPLETADA\n" + "="*40)
+
+
 

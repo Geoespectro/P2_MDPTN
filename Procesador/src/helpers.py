@@ -10,70 +10,6 @@ import cartopy
 import os
 import logging
 
-def loadCPT(path):
-    try:
-        with open(path) as f:
-            lines = f.readlines()
-    except Exception as e:
-        logging.error(f"Error al cargar el archivo CPT: {e}")
-        return None
-
-    x = []
-    r = []
-    g = []
-    b = []
-
-    colorModel = 'RGB'
-
-    for l in lines:
-        try:
-            ls = l.split()
-            if l[0] == '#':
-                if ls[-1] == 'HSV':
-                    colorModel = 'HSV'
-                    continue
-                else:
-                    continue
-            if ls[0] == 'B' or ls[0] == 'F' or ls[0] == 'N':
-                continue
-            else:
-                x.append(float(ls[0]))
-                r.append(float(ls[1]))
-                g.append(float(ls[2]))
-                b.append(float(ls[3]))
-                xtemp = float(ls[4])
-                rtemp = float(ls[5])
-                gtemp = float(ls[6])
-                btemp = float(ls[7])
-
-                x.append(xtemp)
-                r.append(rtemp)
-                g.append(gtemp)
-                b.append(btemp)
-        except Exception as e:
-            logging.warning(f"Error al procesar una línea del archivo CPT: {e}")
-            continue
-
-    if colorModel == 'HSV':
-        for i in range(len(r)):
-            rr, gg, bb = colorsys.hsv_to_rgb(r[i] / 360., g[i], b[i])
-            r[i] = rr
-            g[i] = gg
-            b[i] = bb
-    elif colorModel == 'RGB':
-        r = [val / 255.0 for val in r]
-        g = [val / 255.0 for val in g]
-        b = [val / 255.0 for val in b]
-
-    xNorm = [(val - x[0]) / (x[-1] - x[0]) for val in x]
-
-    red = [[xNorm[i], r[i], r[i]] for i in range(len(x))]
-    green = [[xNorm[i], g[i], g[i]] for i in range(len(x))]
-    blue = [[xNorm[i], b[i], b[i]] for i in range(len(x))]
-
-    colorDict = {'red': red, 'green': green, 'blue': blue}
-
-    return colorDict
 
 def GetCroppedImage(netCDFread, min_lon, max_lon, min_lat, max_lat):
     try:
@@ -161,10 +97,6 @@ def GetCalibratedImage(netCDFread, image):
     except Exception as e:
         logging.error(f"Error al calibrar la imagen: {e}")
         raise
-
-def GetMonth(month):
-    meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
-    return meses[month - 1]
 
 
 def AddImageFoot(ax, title, institution=None, size=8.0):

@@ -54,7 +54,7 @@ El archivo `helpers.py` contiene funciones auxiliares que son fundamentales para
 3. **Procesamiento Continuo**: A medida que se reciben nuevas imágenes, estas se acumulan, se recalculan las matrices de permanencia, y se generan nuevas visualizaciones.
 4. **Generación de Resultados**: Se guardan las imágenes PNG y se actualiza el GIF que muestra la evolución de las nubes en el área de interés.
 
-## 5. Áreas en las que un Desarrollador Puede Mejorar el Código
+## 5. Áreas en las que se podria mejorar el codigo
 - **Modularización**: Dividir algunas funciones del archivo `main.py` en funciones más pequeñas y reutilizables podría facilitar el mantenimiento del código.
 - **Paralelismo en el Procesamiento**: Al igual que en el módulo de descarga, se podría implementar procesamiento paralelo para acelerar el cálculo del acumulado cuando se tienen muchas imágenes disponibles.
 - **Almacenamiento Incremental del Acumulado**: Implementar una manera más eficiente de almacenar y actualizar el acumulado podría reducir el uso de memoria y mejorar la robustez del proceso.

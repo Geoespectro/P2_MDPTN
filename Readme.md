@@ -61,7 +61,7 @@ El proyecto consta de dos módulos principales:
 - **Python 3.8+**
 
 ### Bibliotecas de Python necesarias:
-- `boto3`, `s3fs`, `numpy`, `netCDF4`, `matplotlib`, `cartopy`, `watchdog`, `imageio`, `concurrent.futures`
+- `s3fs`, `numpy`, `netCDF4`, `matplotlib`, `cartopy`, `watchdog`, `imageio`, `concurrent.futures`
 
 Instala las dependencias ejecutando:
 ```bash

@@ -6,7 +6,6 @@ from netCDF4 import Dataset
 from datetime import datetime
 import matplotlib
 import glob
-import imageio
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
