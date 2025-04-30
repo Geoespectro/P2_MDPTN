@@ -126,7 +126,7 @@ Este proyecto está abierto a la colaboración.
 ## 📩 Contacto
 
 Para dudas o sugerencias:
-- **Juan Carlos Quinteros**, **Pedro Rivolta**
+- **Juan Carlos Quinteros**, **Pedro Rivolta**, **Sebastian Heredia**
 
 ¡Gracias por utilizar **MDPTN v0.1**! Créditos a GOES-16 y los repositorios de AWS.
 
